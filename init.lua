@@ -224,7 +224,7 @@ require('lazy').setup({
     config = function()
       require('onedark').setup {
         -- Set a style preset. 'dark' is default.
-        style = 'dark', -- dark, darker, cool, deep, warm, warmer, light
+        style = 'deep' -- darker, cool, deep, warm, warmer, light
       }
       require('onedark').load()
     end,
@@ -328,6 +328,9 @@ vim.o.breakindent = true
 -- Save undo history
 vim.o.undofile = true
 
+-- Setting color column to 80
+vim.o.colorcolumn='80'
+
 -- Case-insensitive searching UNLESS \C or capital in search
 vim.o.ignorecase = true
 vim.o.smartcase = true
@@ -348,6 +351,10 @@ vim.o.termguicolors = true
 -- [[ Basic Keymaps ]]
 
 -- Keymaps for better default experience
+
+-- Remap jj to be Escape 
+vim.keymap.set({ 'i' }, 'jj', '<Esc>')
+
 -- See `:help vim.keymap.set()`
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
